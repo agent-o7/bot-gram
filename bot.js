@@ -66,6 +66,6 @@ bot.on("message", (msg) => {
 });
 
 const port = 8000;
-server.listen(PORT, () =>{
+server.listen(port, () =>{
     console.log('serveur initialization');
 });
