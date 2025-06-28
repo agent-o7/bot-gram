@@ -1,6 +1,11 @@
 const TelegramBot = require('node-telegram-bot-api');
+conzst http = require('http');
 require('dotenv').config();
 
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain' });
+  res.end('hi there i am Scofield');
+});
 
 const token =  process.env.SCRT;
 // console.log(token)
@@ -58,4 +63,9 @@ bot.on("message", (msg) => {
             "❌ Invalid command! Type /help to see available commands."
         );
     }
+});
+
+const port = 8000;
+server.listen(PORT, () =>{
+    console.log('serveur initialization');
 });
