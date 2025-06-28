@@ -1,5 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api');
-conzst http = require('http');
+const http = require('http');
 require('dotenv').config();
 
 const server = http.createServer((req, res) => {
