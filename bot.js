@@ -6,7 +6,7 @@ const token =  process.env.SCRT;
 // console.log(token)
 const bot = new TelegramBot(token, { polling: true });
 
-const validCommands = ["/start", "/help", "/wtf"];
+const validCommands = ["/start", "/help", "/wtf", '/contact'];
 
 
 // Set bot commands with descriptions
@@ -28,13 +28,22 @@ bot.onText(/\/wtf/, (msg) => {
     "1 --> rendre public les heures libres de franklin st");
 });
 
+bot.onText(/\/contact/, (msg) => {
+    bot.sendMessage(msg.chat.id,
+    "Hello! Je suis l'agent de pachome.\n"+
+    "Un chatbot mis en place pour \n"+
+    " contacté franklin st scofield ici https://wa.me/22879689386");
+});
+
+
 bot.onText(/\/help/, (msg) => {
     bot.sendMessage(
         msg.chat.id,
         "les commandes possibles sont:\n" +
         "/start\n"+
         "/wtf\n"+
-        "/help"
+        "/help\n"+
+        "/contact"
     );
 });
 
